@@ -245,6 +245,7 @@
                 android:layout_below="@+id/r2"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
+                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:background="#A9A9A9" />
 
@@ -264,21 +265,23 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="296dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/view3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="18dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:textAlignment="center"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/opensansregular"
-                    android:paddingLeft="15dp"
                     android:text="w1"
                     android:textColor="@android:color/black"
+                    android:textAlignment="center"
                     android:textSize="24sp" />
 
                 <TextView
@@ -286,20 +289,20 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/opensansregular"
-                    android:paddingLeft="20dp"
                     android:text="w2"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textAlignment="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/opensansregular"
-                    android:paddingLeft="20dp"
                     android:text="w3"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textAlignment="center"/>
 
                 <TextView
                     android:id="@+id/textView9"
@@ -307,10 +310,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/opensansregular"
-                    android:paddingLeft="15dp"
                     android:text="w4"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textAlignment="center"/>
             </LinearLayout>
 
         </RelativeLayout>

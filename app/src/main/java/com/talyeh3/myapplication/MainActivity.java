@@ -6,11 +6,9 @@ import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -29,16 +27,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
-        Log.i("k","j");
-        openDialogButtun = (Button) findViewById( R.id.openDialogButtun );
 
+        openDialogButtun = (Button) findViewById( R.id.openDialogButtun );
         dialog= new Dialog(this);
         weeks = new double[4];
-        // ~~~~~~~~~~~~~~~~~~~~ the hours in Days~~~~~~~~~~~~~~~~~~~~
-        weeks[0] = doAvarage(2, 4, 2, 2, 2, 2, 2);
-        weeks[1] = doAvarage(9, 9, 9, 9, 5, 6, 9);
-        weeks[2] = doAvarage(14, 14, 14, 14, 14, 14, 14);
-        weeks[3] = doAvarage(3, 3,3,3,3, 3,4);
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // ~~~~~~~~~~~~~~~~~~~~ the hours in Days~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        weeks[0] = doAverage(0, 0, 0, 0, 0, 0, 0);
+        weeks[1] = doAverage(9, 9, 9, 9, 5, 6, 9);
+        weeks[2] = doAverage(14, 14, 14, 14, 14, 14, 14);
+        weeks[3] = doAverage(3, 3,3,3,3, 3,4);
 
         stringTotalHours = new String [4];
         stringTotalHours[0] = totalHours( weeks[0] );
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         } );
     }
     // *********************************** Calculate the weekly average number *******************************************************
-    private double doAvarage(double d1, double d2, double d3, double d4, double d5, double d6, double d7) {
+    private double doAverage(double d1, double d2, double d3, double d4, double d5, double d6, double d7) {
         double sum = ((d1 + d2 + d3 + d4 + d5 +d6 +d7)/7);
         return sum;
     }
@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
     private String totalHours(double sum) {
         double total = sum * 60 ;
         int totalMinutes = (int)total;
-        int hours = (int)totalMinutes / 60; //since both are ints, you get an int
-        int minutes = (int)totalMinutes % 60;
+        int hours = totalMinutes / 60;
+        int minutes = totalMinutes % 60;
         return "" + hours + "h, " + minutes + "m";
     }
 
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         p3 = (RelativeLayout) dialog.findViewById( R.id.p3);
         p4 = (RelativeLayout) dialog.findViewById( R.id.p4);
 
-
         average1 = (TextView) dialog.findViewById( R.id.average1);
         average2 = (TextView) dialog.findViewById( R.id.average2);
         average3 = (TextView) dialog.findViewById( R.id.average3);
@@ -90,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
         mLineView2 = (LineView) dialog.findViewById(R.id.lineView2);
         mLineView3 = (LineView) dialog.findViewById(R.id.lineView3);
 
+        //Position the circles according to average hours
         int margin = 15;
         p1.setY( (int)weeks[0] * -margin );
         p2.setY( (int)weeks[1] * -margin );
         p3.setY( (int)weeks[2] * -margin );
         p4.setY( (int)weeks[3] * -margin );
-
 
         average1.setText(  stringTotalHours[0] );
         average2.setText(  stringTotalHours[1] );
