@@ -6,9 +6,11 @@ import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button openDialogButtun;
     private TextView average1,average2,average3,average4,title;
     private RelativeLayout p1,p2,p3,p4;
+    private ImageView im1;
     private LinearLayout linear1;
     private Dialog dialog;
     private double[] weeks;// Weekly average number
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         p3 = (RelativeLayout) dialog.findViewById( R.id.p3);
         p4 = (RelativeLayout) dialog.findViewById( R.id.p4);
 
+        im1 = (ImageView) dialog.findViewById( R.id.im1);
+
         average1 = (TextView) dialog.findViewById( R.id.average1);
         average2 = (TextView) dialog.findViewById( R.id.average2);
         average3 = (TextView) dialog.findViewById( R.id.average3);
@@ -87,10 +92,11 @@ public class MainActivity extends AppCompatActivity {
         mLineView2 = (LineView) dialog.findViewById(R.id.lineView2);
         mLineView3 = (LineView) dialog.findViewById(R.id.lineView3);
 
-        p1.setY( (int)weeks[0] * -15 );
-        p2.setY( (int)weeks[1] * -15 );
-        p3.setY( (int)weeks[2] * -15 );
-        p4.setY( (int)weeks[3] * -15 );
+        p1.setY( (int)weeks[0] * -10 );
+        p2.setY( (int)weeks[1] * -10 );
+        p3.setY( (int)weeks[2] * -10 );
+        p4.setY( (int)weeks[3] * -10 );
+
 
         average1.setText(  stringTotalHours[0] );
         average2.setText(  stringTotalHours[1] );
@@ -103,13 +109,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onGlobalLayout() {
                 float temp = lessMarginText ( p1.getY());
-                average1.setY( p1.getY()+p1.getHeight()/2 + temp);
-                temp = lessMarginText ( p2.getY());
-                average2.setY( p2.getY()+p2.getHeight()/2 + temp);
+                Log.i( "aaaa","aaaa");
+                Log.i( "aaaa",""+ im1.getY());
+                Log.i( "aaaa",""+ average1.getY());
+              //  average1.setY( im1.getY());
+                Log.i( "aaaa",""+ p1.getY());
+                Log.i( "aaaa",""+ average1.getY());
+              //  temp = lessMarginText ( p2.getY());
+             //   average2.setY( p2.getY()+p2.getHeight()/2 + temp);
                 temp = lessMarginText ( p3.getY());
-                average3.setY( p3.getY()+p3.getHeight()/2 + temp);
+              //  average3.setY( p3.getY()+p3.getHeight()/2 + temp);
                 temp = lessMarginText ( p4.getY());
-                average4.setY( p4.getY()+p4.getHeight()/2 + temp);
+           //     average4.setY( p4.getY()+p4.getHeight()/2 + temp);
                 PointF pointA = new PointF(p1.getX()+p1.getWidth()/2,p1.getY()+p1.getHeight()/2);
                 PointF pointB = new PointF(p2.getX()+p2.getWidth()/2,p2.getY()+p2.getHeight()/2);
                 mLineView.setPointA(pointA);

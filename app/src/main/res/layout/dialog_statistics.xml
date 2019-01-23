@@ -10,12 +10,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
@@ -92,22 +92,22 @@
                 <com.talyeh3.myapplication.LineView
                     android:id="@+id/lineView2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="200dp" />
 
                 <com.talyeh3.myapplication.LineView
                     android:id="@+id/lineView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="200dp" />
 
                 <com.talyeh3.myapplication.LineView
                     android:id="@+id/lineView3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="200dp" />
 
                 <LinearLayout
                     android:id="@+id/linear1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:orientation="horizontal">
 
@@ -115,16 +115,16 @@
                     <RelativeLayout
                         android:id="@+id/p1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         android:padding="0dp"
-                        android:translationY="150dp">
+                        android:layout_marginTop="100dp">
 
                         <TextView
                             android:id="@+id/average1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="13dp"
@@ -137,7 +137,7 @@
                         <ImageView
                             android:id="@+id/im1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/p2" />
@@ -147,10 +147,10 @@
                     <RelativeLayout
                         android:id="@+id/p2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:translationY="150dp">
+                        android:layout_marginTop="100dp">
 
                         <TextView
                             android:id="@+id/average2"
@@ -169,7 +169,7 @@
                         <ImageView
                             android:id="@+id/pic2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
@@ -181,15 +181,15 @@
                     <RelativeLayout
                         android:id="@+id/p3"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:translationY="150dp">
+                        android:layout_marginTop="100dp">
 
                         <TextView
                             android:id="@+id/average3"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="16dp"
@@ -201,7 +201,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/p2" />
 
@@ -210,15 +210,15 @@
                     <RelativeLayout
                         android:id="@+id/p4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:translationY="150dp">
+                        android:layout_marginTop="100dp">
 
                         <TextView
                             android:id="@+id/average4"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="15dp"
@@ -230,7 +230,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/p2" />
                     </RelativeLayout>
@@ -242,23 +242,17 @@
                 android:id="@+id/view3"
                 android:layout_width="300dp"
                 android:layout_height="1dp"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="center"
-                android:layout_marginBottom="94dp"
-                android:background="#A9A9A9"
-
-
+                android:layout_below="@+id/r2"
                 android:layout_centerHorizontal="true"
-
-                />
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:background="#A9A9A9" />
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="390dp"
-                android:layout_height="45dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout"
                 android:background="@drawable/text"
                 android:fontFamily="@font/opensanssemibold"
                 android:paddingLeft="10dp"
@@ -272,10 +266,9 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="296dp"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/textView10"
+                android:layout_below="@+id/view3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="18dp"
-                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
