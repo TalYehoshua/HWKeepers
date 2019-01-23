@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         // ~~~~~~~~~~~~~~~~~~~~ the hours in Days~~~~~~~~~~~~~~~~~~~~
         weeks[0] = doAvarage(2, 4, 2, 2, 2, 2, 2);
         weeks[1] = doAvarage(9, 9, 9, 9, 5, 6, 9);
-        weeks[2] = doAvarage(14, 14, 14, 12, 14, 15, 15);
+        weeks[2] = doAvarage(14, 14, 14, 14, 14, 14, 14);
         weeks[3] = doAvarage(3, 3,3,3,3, 3,4);
 
         stringTotalHours = new String [4];
@@ -92,10 +92,11 @@ public class MainActivity extends AppCompatActivity {
         mLineView2 = (LineView) dialog.findViewById(R.id.lineView2);
         mLineView3 = (LineView) dialog.findViewById(R.id.lineView3);
 
-        p1.setY( (int)weeks[0] * -10 );
-        p2.setY( (int)weeks[1] * -10 );
-        p3.setY( (int)weeks[2] * -10 );
-        p4.setY( (int)weeks[3] * -10 );
+        int margin = 15;
+        p1.setY( (int)weeks[0] * -margin );
+        p2.setY( (int)weeks[1] * -margin );
+        p3.setY( (int)weeks[2] * -margin );
+        p4.setY( (int)weeks[3] * -margin );
 
 
         average1.setText(  stringTotalHours[0] );
@@ -109,18 +110,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onGlobalLayout() {
                 float temp = lessMarginText ( p1.getY());
-                Log.i( "aaaa","aaaa");
-                Log.i( "aaaa",""+ im1.getY());
-                Log.i( "aaaa",""+ average1.getY());
-              //  average1.setY( im1.getY());
-                Log.i( "aaaa",""+ p1.getY());
-                Log.i( "aaaa",""+ average1.getY());
-              //  temp = lessMarginText ( p2.getY());
-             //   average2.setY( p2.getY()+p2.getHeight()/2 + temp);
-                temp = lessMarginText ( p3.getY());
-              //  average3.setY( p3.getY()+p3.getHeight()/2 + temp);
-                temp = lessMarginText ( p4.getY());
-           //     average4.setY( p4.getY()+p4.getHeight()/2 + temp);
                 PointF pointA = new PointF(p1.getX()+p1.getWidth()/2,p1.getY()+p1.getHeight()/2);
                 PointF pointB = new PointF(p2.getX()+p2.getWidth()/2,p2.getY()+p2.getHeight()/2);
                 mLineView.setPointA(pointA);
