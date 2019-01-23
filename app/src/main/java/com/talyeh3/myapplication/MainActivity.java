@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button openDialogButtun;
-    private TextView average1,average2,average3,average4,title;
+    private TextView average1,average2,average3,average4;
     private RelativeLayout p1,p2,p3,p4;
     private ImageView im1;
     private LinearLayout linear1;
@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                float temp = lessMarginText ( p1.getY());
                 PointF pointA = new PointF(p1.getX()+p1.getWidth()/2,p1.getY()+p1.getHeight()/2);
                 PointF pointB = new PointF(p2.getX()+p2.getWidth()/2,p2.getY()+p2.getHeight()/2);
                 mLineView.setPointA(pointA);
@@ -132,20 +131,5 @@ public class MainActivity extends AppCompatActivity {
                 linear1.getViewTreeObserver().removeOnGlobalLayoutListener( this );
             }
         });
-    }
-    // ****************** Reduces the spacing between image and text *******************************
-    float lessMarginText ( float temp) {
-        int sum = 0;
-        if (temp <= 0 && temp >= -40)
-        {
-            sum = -100;
-        } else if (temp <= -41 && temp >= -80) {
-            sum = -40;
-        }  else if (temp <= -150 && temp >= -200) {
-            sum = 60;
-        }  else if (temp <= -201 &&temp >= -240) {
-            sum = 110;
-        }
-        return sum;
     }
 }
