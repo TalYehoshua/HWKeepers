@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private Button openDialogButtun;
     private TextView average1,average2,average3,average4;
     private RelativeLayout p1,p2,p3,p4;
-    private ImageView im1;
     private LinearLayout linear1;
     private Dialog dialog;
     private double[] weeks;// Weekly average number
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
-
+        Log.i("k","j");
         openDialogButtun = (Button) findViewById( R.id.openDialogButtun );
 
         dialog= new Dialog(this);
@@ -80,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         p3 = (RelativeLayout) dialog.findViewById( R.id.p3);
         p4 = (RelativeLayout) dialog.findViewById( R.id.p4);
 
-        im1 = (ImageView) dialog.findViewById( R.id.im1);
 
         average1 = (TextView) dialog.findViewById( R.id.average1);
         average2 = (TextView) dialog.findViewById( R.id.average2);
