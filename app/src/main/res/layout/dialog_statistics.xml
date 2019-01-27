@@ -8,326 +8,352 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/dialog_background">
+            android:orientation="vertical">
 
             <RelativeLayout
-                android:id="@+id/r3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView12"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="11dp"
-                    android:fontFamily="@font/opensansbold"
-                    android:text="November"
-                    android:textColor="@android:color/black"
-                    android:textSize="30sp" />
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/dialog_background">
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="28dp"
-                    android:fontFamily="@font/opensansregular"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:text="Tom's Monthly Statistics"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="28sp" />
+                    <RelativeLayout
+                        android:id="@+id/r3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true">
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="300dp"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/textView13"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="14dp"
-                    android:background="#A9A9A9" />
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView12"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="11dp"
+                            android:fontFamily="@font/opensansbold"
+                            android:text="November"
+                            android:textColor="@android:color/black"
+                            android:textSize="26sp" />
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView11"
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="45dp"
+                            android:fontFamily="@font/opensansregular"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="0dp"
+                            android:text="Tom's Monthly Statistics"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="23sp" />
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/textView13"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="3dp"
+                            android:background="#393939" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView11"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/opensanssemibold"
+                            android:text="Tom's  weekly screen time\n in the last month."
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/r2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/r3"
+                        android:translationY="20dp">
+
+                        <com.talyeh3.myapplication.LineView
+                            android:id="@+id/lineView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:alpha="0" />
+
+                        <com.talyeh3.myapplication.LineView
+                            android:id="@+id/lineView"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:alpha="0" />
+
+                        <com.talyeh3.myapplication.LineView
+                            android:id="@+id/lineView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:alpha="0" />
+
+                        <LinearLayout
+                            android:id="@+id/linear1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:orientation="horizontal"
+                            >
+
+
+                            <RelativeLayout
+                                android:id="@+id/p1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="120dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:padding="0dp">
+
+                                <TextView
+                                    android:id="@+id/average1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:fontFamily="@font/opensanssemibold"
+                                    android:padding="0dp"
+                                    android:text="A"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black" />
+
+                                <ImageView
+                                    android:id="@+id/im1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/p2" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/p2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="120dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/average2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:fontFamily="@font/opensanssemibold"
+                                    android:padding="0dp"
+                                    android:text="A"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"/>
+
+                                <ImageView
+                                    android:id="@+id/pic2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/p2" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/p3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="120dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/average3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:fontFamily="@font/opensanssemibold"
+                                    android:padding="0dp"
+                                    android:text="A"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"/>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/p2" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/p4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="120dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/average4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_weight="1"
+                                    android:background="@android:color/white"
+                                    android:fontFamily="@font/opensanssemibold"
+                                    android:padding="0dp"
+                                    android:text="A"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"/>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/p2" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/r2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#393939" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout"
+                        android:background="@drawable/text"
+                        android:fontFamily="@font/opensanssemibold"
+                        android:padding="11dp"
+                        android:text="A 12-year-old child sends / receives an average 34/5 bad conversations in one day."
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="18dp"
+                        android:orientation="horizontal"
+                        android:textAlignment="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/opensansregular"
+                            android:text="W1"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/opensansregular"
+                            android:text="W2"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/opensansregular"
+                            android:text="W3"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/opensansregular"
+                            android:text="W4"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignTop="@+id/relativeLayout"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/opensanssemibold"
-                    android:text="Tom's  weekly screen time\n in the last month."
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:layout_marginTop="-50dp"
+                    android:src="@drawable/p1" />
+
+
             </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
-            <RelativeLayout
-                android:id="@+id/r2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/r3">
-
-                <com.talyeh3.myapplication.LineView
-                    android:id="@+id/lineView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-                <com.talyeh3.myapplication.LineView
-                    android:id="@+id/lineView"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-                <com.talyeh3.myapplication.LineView
-                    android:id="@+id/lineView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-                <LinearLayout
-                    android:id="@+id/linear1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:orientation="horizontal">
-
-
-                    <RelativeLayout
-                        android:id="@+id/p1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:padding="0dp"
-                        android:layout_marginTop="100dp">
-
-                        <TextView
-                            android:id="@+id/average1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="13dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/opensanssemibold"
-                            android:text="A"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black" />
-
-                        <ImageView
-                            android:id="@+id/im1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/p2" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/p2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginTop="100dp">
-
-                        <TextView
-                            android:id="@+id/average2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="12dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/opensanssemibold"
-                            android:text="2"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black" />
-
-                        <ImageView
-                            android:id="@+id/pic2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/p2" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/p3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginTop="100dp">
-
-                        <TextView
-                            android:id="@+id/average3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="16dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/opensanssemibold"
-                            android:text="3"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black" />
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/p2" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/p4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginTop="100dp">
-
-                        <TextView
-                            android:id="@+id/average4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="15dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/opensanssemibold"
-                            android:text="4"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black" />
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            app:srcCompat="@drawable/p2" />
-                    </RelativeLayout>
-
-                </LinearLayout>
-            </RelativeLayout>
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="300dp"
-                android:layout_height="1dp"
-                android:layout_below="@+id/r2"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:background="#A9A9A9" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout"
-                android:background="@drawable/text"
-                android:fontFamily="@font/opensanssemibold"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="A 12-years-old child sends / receives an average 34/35 bad conversations in one day."
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="13sp" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/view3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:orientation="horizontal"
-                android:textAlignment="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/opensansregular"
-                    android:text="w1"
-                    android:textColor="@android:color/black"
-                    android:textAlignment="center"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/opensansregular"
-                    android:text="w2"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/opensansregular"
-                    android:text="w3"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/opensansregular"
-                    android:text="w4"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-
-        </RelativeLayout>
-
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignTop="@+id/relativeLayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-50dp"
-            android:src="@drawable/p1" />
-
-
-    </RelativeLayout>
 </RelativeLayout>

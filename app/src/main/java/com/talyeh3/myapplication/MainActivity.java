@@ -6,6 +6,7 @@ import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Dialog dialog;
     private double[] weeks;// Weekly average number
     private String [] stringTotalHours; // Weekly average string like 4h, 3m
-    private LineView mLineView,mLineView2,mLineView3 ;
+    private LineView mLineView1,mLineView2,mLineView3 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // ~~~~~~~~~~~~~~~~~~~~ the hours in Days~~~~~~~~~~~~~~~~~~~~~~~
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        weeks[0] = doAverage(0, 0, 0, 0, 0, 0, 0);
-        weeks[1] = doAverage(9, 9, 9, 9, 5, 6, 9);
-        weeks[2] = doAverage(14, 14, 14, 14, 14, 14, 14);
-        weeks[3] = doAverage(3, 3,3,3,3, 3,4);
+        weeks[0] = doAverage(2, 3, 2, 3, 0, 0, 0);
+        weeks[1] = doAverage(10, 10, 10, 14, 14, 14, 4);
+        weeks[2] = doAverage(18, 18, 18, 18, 18, 18, 18);
+        weeks[3] = doAverage(6, 6,8,3,3, 3,4);
 
         stringTotalHours = new String [4];
         stringTotalHours[0] = totalHours( weeks[0] );
@@ -57,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
     // *********************************** Calculate the weekly average number *******************************************************
     private double doAverage(double d1, double d2, double d3, double d4, double d5, double d6, double d7) {
         double sum = ((d1 + d2 + d3 + d4 + d5 +d6 +d7)/7);
+        if (sum > 24 ) {
+            sum = 24;
+        } else if (sum <0) {
+            sum = 0 ;
+        }
         return sum;
     }
     // *********************************** Calculate the weekly average String*******************************************************
@@ -85,12 +91,17 @@ public class MainActivity extends AppCompatActivity {
         average4 = (TextView) dialog.findViewById( R.id.average4);
 
         linear1 = (LinearLayout) dialog.findViewById( R.id.linear1);
-        mLineView = (LineView) dialog.findViewById(R.id.lineView);
+        mLineView1 = (LineView) dialog.findViewById(R.id.lineView);
         mLineView2 = (LineView) dialog.findViewById(R.id.lineView2);
         mLineView3 = (LineView) dialog.findViewById(R.id.lineView3);
 
         //Position the circles according to average hours
         int margin = 15;
+        p1.animate().translationYBy( (int)weeks[0] * -margin  ).setDuration( 2000 );
+        p2.animate().translationYBy( (int)weeks[1] * -margin  ).setDuration( 2000 );
+        p3.animate().translationYBy( (int)weeks[2] * -margin  ).setDuration( 2000 );
+        p4.animate().translationYBy( (int)weeks[3] * -margin  ).setDuration( 2000 );
+
         p1.setY( (int)weeks[0] * -margin );
         p2.setY( (int)weeks[1] * -margin );
         p3.setY( (int)weeks[2] * -margin );
@@ -106,26 +117,19 @@ public class MainActivity extends AppCompatActivity {
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
+                drawLines(p1, p2 ,mLineView1);
+                drawLines(p2, p3 ,mLineView2);
+                drawLines(p3, p4 ,mLineView3);
+                linear1.getViewTreeObserver().removeOnGlobalLayoutListener( this );
+            }
+
+            public void drawLines(android.widget.RelativeLayout p1, android.widget.RelativeLayout p2 ,LineView mLineView) {
                 PointF pointA = new PointF(p1.getX()+p1.getWidth()/2,p1.getY()+p1.getHeight()/2);
                 PointF pointB = new PointF(p2.getX()+p2.getWidth()/2,p2.getY()+p2.getHeight()/2);
+                mLineView.animate().alpha( 1f ).setDuration( 2000 );
                 mLineView.setPointA(pointA);
                 mLineView.setPointB(pointB);
                 mLineView.draw();
-
-                PointF pointC = new PointF(p2.getX()+p2.getWidth()/2,p2.getY()+p2.getHeight()/2);
-                PointF pointD = new PointF(p3.getX()+p3.getWidth()/2,p3.getY()+p3.getHeight()/2 );
-
-                mLineView2.setPointA(pointC);
-                mLineView2.setPointB(pointD);
-                mLineView2.draw();
-
-                PointF pointE = new PointF(p3.getX()+p3.getWidth()/2,p3.getY()+p3.getHeight()/2 );
-                PointF pointF = new PointF(p4.getX()+p4.getWidth()/2,p4.getY()+p4.getHeight()/2);
-
-                mLineView3.setPointA(pointE);
-                mLineView3.setPointB(pointF);
-                mLineView3.draw();
-                linear1.getViewTreeObserver().removeOnGlobalLayoutListener( this );
             }
         });
     }
